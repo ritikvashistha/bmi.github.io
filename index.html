@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap </title>
+    <link rel="stylesheet" type="text/css" >
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+    <style>
+        body{
+            background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url('bmi.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            height: 100vh;
+            position:relative;
+            
+            
+        }
+        header{
+            width:100%; 
+            position:absolute;
+            top:45%;
+            left: 50%;
+            transform: translate(-50%,-50%)
+        }
+     
+    </style>
+    
+</head>
+<body>
+<header>
+    <div class="card w-50 m-auto ">
+  <div class="card-header bg-warning text-center">Body Mass Index(BMI) Calculator</div>
+  <div class="card-body">
+        <form class="form w-75 m-auto needs-validation" >
+            <div class="form-group">
+
+              <label> Height</label> 
+                <input type="text" id="height" class="form-control text-center" placeholder="Enter Your Height" >
+            
+            </div>
+      
+      <div class="form-group">
+          <label>Weight</label>
+            <input type="text" id="weight" class="form-control text-center" placeholder="Enter Your Weight">
+            
+            </div>
+            
+ 
+        </form>
+      <center>
+      <div class="btn btn-success w-50" onclick="getbmi()">check BMI</div>
+        </center>
+          
+        <div class="form-group w-20">
+          
+            Result <input class="form-control width-30" type="text" id="ans"  placeholder="">
+            
+            </div>          
+    
+        <div class="card-footer text-center"><b>Normal BMI lies in between 19 and 24</b></div>
+    </div>
+    </div>
+    </header>
+<script>   
+    function getbmi(){
+       var height=document.getElementById('height').value;
+       var weight=document.getElementById('weight').value;
+       height =height * 12;
+        height = height * 0.025;
+       var result =weight/(height*height);
+        document.getElementById('ans').value=result;
+       }
+    </script>
+
+</body>
+</html>
